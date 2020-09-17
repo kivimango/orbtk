@@ -280,7 +280,7 @@ impl Layout for GridLayout {
 
                 self.desired_size.borrow_mut().set_dirty(dirty);
                 desired_size.0 = desired_size.0.max(child_desired_size.width());
-                desired_size.1 = desired_size.1.max(child_desired_size.height());
+                desired_size.1 += desired_size.1.max(child_desired_size.height());
 
                 self.children_sizes.borrow_mut().insert(
                     child,
